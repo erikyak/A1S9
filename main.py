@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
 files = {
     'randomSorted': 'randomSorted.csv',
@@ -10,12 +9,8 @@ files = {
 
 data = {}
 for name, file in files.items():
-    if os.path.exists(file):
-        data[name] = pd.read_csv(file)
-    else:
-        print(f"Файл {file} не найден!")
+    data[name] = pd.read_csv(file)
 
-plt.style.use('seaborn-v0_8')
 colors = {
     'stdQuickSort': 'green',
     'stdMergeSort': 'brown',
